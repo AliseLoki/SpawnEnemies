@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
 {
-    [SerializeField] private GameObject[] _enemy;
+    private const string MethodName = nameof(SpawnEnemies);
+
+    [SerializeField] private Enemy[] _enemy;
     [SerializeField] private GameObject[] _spawnPosition;
 
     private float _startSpawn = 1f;
@@ -10,7 +12,7 @@ public class SpawnEnemy : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("SpawnEnemies", _startSpawn, _spawnInterval);
+        InvokeRepeating(MethodName, _startSpawn, _spawnInterval);
     }
 
     private void SpawnEnemies()

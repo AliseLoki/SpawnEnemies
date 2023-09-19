@@ -232,9 +232,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemy:
-  - {fileID: 4786712256766935265, guid: 6fd635a8ebb84c841a94757caf68fe08, type: 3}
-  - {fileID: 1855679524662607930, guid: f9b611f14a642ef44be515bcb2045494, type: 3}
-  - {fileID: 7197948340117356887, guid: 00303366565a7414999fffddbbafbcc9, type: 3}
+  - {fileID: -7489837064348575113, guid: 00303366565a7414999fffddbbafbcc9, type: 3}
+  - {fileID: -7368778342115018915, guid: f9b611f14a642ef44be515bcb2045494, type: 3}
+  - {fileID: 281375057205334804, guid: 1eec7925df7ac894085c7a20a12d5b63, type: 3}
+  - {fileID: 5765602415850510009, guid: 6fd635a8ebb84c841a94757caf68fe08, type: 3}
   _spawnPosition:
   - {fileID: 722598965}
   - {fileID: 449195940}

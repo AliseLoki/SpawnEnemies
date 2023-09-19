@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class MoveForward : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     [SerializeField] private float _speed;
 
-    void Update()
+    private void Update()
     {
         transform.Translate(Vector3.forward * _speed * Time.deltaTime);
     }
