@@ -4,11 +4,12 @@ public class SpawnEnemy : MonoBehaviour
 {
     private const string MethodName = nameof(SpawnEnemies);
 
-    [SerializeField] private Enemy[] _enemy;
-    [SerializeField] private GameObject[] _spawnPosition;
+    [SerializeField] private float _spawnInterval;
+    [SerializeField] private Enemy[] _enemies;
+    [SerializeField] private GameObject[] _spawnPositions;
+    [SerializeField] private GameObject[] _moveTargets;
 
-    private float _startSpawn = 1f;
-    private float _spawnInterval = 2f;
+    private float _startSpawn = 0f;
 
     private void Start()
     {
@@ -17,12 +18,12 @@ public class SpawnEnemy : MonoBehaviour
 
     private void SpawnEnemies()
     {
-        int positionIndex = Random.Range(0, _spawnPosition.Length);
-        int enemyIndex = Random.Range(0, _enemy.Length);
-
-        Vector3 spawnPosition = _spawnPosition[positionIndex].transform.position;
-        Quaternion spawnRotation = _spawnPosition[positionIndex].transform.rotation;
-
-        Instantiate(_enemy[enemyIndex], spawnPosition, spawnRotation);
+        for (int i = 0, j = 0, k = 0; i < _enemies.Length && j < _spawnPositions.Length && k < _moveTargets.Length; i++, j++, k++)
+        {
+            Vector3 spawnPosition = _spawnPositions[j].transform.position;
+            Quaternion spawnRotation = _spawnPositions[j].transform.rotation;
+            Instantiate(_enemies[i], spawnPosition, spawnRotation);
+            _enemies[i].Initialize(_moveTargets[k]);
+        }
     }
 }
